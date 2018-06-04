@@ -1,0 +1,48 @@
+%!TeX encoding=utf8
+\documentclass[ngerman]{scrartcl} 
+
+\newcommand{\authA}{Author1: Domenik Kuhn}
+\newcommand{\matA}{10011073}
+\newcommand{\authB}{Author2: Finn Feuerstarke}
+\newcommand{\matB}{10011078}
+\newcommand{\grpnr}{Gruppe: 220}
+\input{SYSTEM/options.tex}
+%---
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{purple},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{blue},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%---document
+\begin{document}
+\includepdf{Deckblatt}
+% % %Table of Contents
+\pagenumbering{roman} 
+\section*{\centering Zusammenfassung}
+Während des Anfängerpraktikumsseminars haben wir uns mit verschiedenen Wahrscheinlichkeitsverteilungen, wie die Binomial-, Normal- oder Poissonverteilung, auseinandergesetzt. In diesem Bericht untersuchen wir ein Zufallsexperiment auf seine Zufallsverteilung.
+
+% % %Table of Contents
+\tableofcontents
+% % %
+
+\pagestyle{scrheadings} %re-enable headings and footer
+
+% % %Content
+\pagenumbering{arabic}
+
+\input{CONTENT/SEM}
+% % %
+\end{document}

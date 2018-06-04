@@ -1,0 +1,62 @@
+\clearpage
+
+\section{Das Zufallsexperiment}
+
+Das Zufallsexperiment, dass wir betrachten, ist das Auftreffen von Photonen auf Strahlteiler verschiedener Anzahl mit verschiedenen Durchlasswahrscheinlichkeiten. Hierbei nehmen wir an das immer acht Photonen ausgelöst werden und in unser Experiment gelangen. Nun lassen wir die Photonen hintereinander auf die Strahlteiler treffen und untersuchen wie viele Photonen durch alle Strahlteiler gelangt sind. Hierbei ist die Durchlasswahrscheinlichkeit für ein Photon bei allen Strahlteilern gleich. Diesen Versuch führen wir nun für einen, drei und fünf Strahlteiler durch mit Durchlasswahrscheinlichkeiten von ein Viertel, ein Halb und Dreiviertel und das jeweils 500.000.000 Mal und untersuchen dabei die Verteilung der am Ende von allen Strahlteilern durchgelassenen Photonen.
+
+\subsection{Methode der Durchführung}
+
+Wir haben diesen Versuch mithilfe von Java simuliert. Im Anhang ist der Java-Code vorzufinden den wir zur Simulation benutzt haben.\\
+Unserer Programm zur Simulation des Zufallsexperimentes benötigt als Argumente als erstes die Anzahl der Photonen, in unserem Fall acht, dann die Anzahl der Strahlteiler, die Durchlasswahrscheinlichkeit und die Anzahl der Durchführungen des Experimentes, sowie wahlweise den Dateinamen mit Dokumententyp unter dem die Daten abgespeichert werden soll. In diesem Fall werden die Daten nicht ausgegeben, sondern nur als Dokument gespeichert.\\
+Hierbei lassen wir das Programm als erstes testen ob genug Argumente vorhanden sind, sonst gibt es eine Fehlermeldung aus. Als nächstes initialisieren wir die Variablen unseres Programmes als ganze Zahlen beziehungsweise die Wahrscheinlichkeit als Kommazahl. Zusätzlich definieren wir uns die Liste absHaeufigkeit die um eins länger ist als wir Photonen in unser Experiment schicken und die wir benutzen um unsere absoluten Häufigkeiten zu erhalten.\\
+Dann verwenden wir eine For-Schleife die von Null bis zur Anzahl der Durchführungen läuft und nPhotonen gleich unserer Startphotonenzahl setzt. Nun wenden wir in einer inneren For-Schleife, die die Anzahl der Strahlteiler durchläuft, eine Funktion Strahlenteiler auf nPhotonen an und erhalten als Output dieser For-Schleife die Anzahl der durchgelassenen Photonen von dieser Durchführung des Zufallsexperiments. Zum Abschluss erhöhen wir nun in der äußeren For-Schleife an der Stelle unserer Liste absHaeufigkeit, die gleich unserem nach der Durchführung der inneren For-Schleife erhaltenen nPhotonen ist, den Wert um Eins. Hierbei ist es hilfreich, dass Listen in Java mit dem nullten Element beginnen, wodurch wir als das nullte Listenelement das absolute Häufigkeit von Null durchgelassenen Photonen haben können etc. Dies führen wir nun so oft durch wie wir angegeben haben und erhalten so eine Liste mit unseren absoluten Häufigkeiten für unserer Zufallsexperiment.\\
+Als nächstes testen wir mit einem If-Befehl, ob wir das Ergebnis als Dokument speichern sollen oder einfach ausgeben sollen, indem wir die Anzahl unserer Argumente untersuchen.\\
+Als vorletztes definieren wir noch unsere bereits verwendete Funktion Strahlenteiler, wobei wir als erstes unseren Output sout Null setzen, dann durchlaufen wir mit einer For-Schleife alle Photonen die wir in den Strahlteiler schicken und generieren für jedes eine Zufallszahl zwischen Null und Eins und testen ob diese kleiner oder gleich unserer festgelegten Wahrscheinlichkeit ist. Wenn dem so ist erhöhen wir sout um Eins, sonst nicht. Zum Schluss definieren wir noch die Funktion, die unsere Output-Datei generiert. Hierbei durchlaufen wir mit einer For-Schleife unsere Liste absHaufigkeit und schreiben diese in die entsprechende Zeile des Dokuments in der Form „durchgekommene Photonen“; “absolute Häufigkeit“.
+
+
+\section{Auswertungen}
+
+\subsection{Diagramme}
+\subsubsection{Ein Strahlteiler}
+
+%%%ANGABEN DATEN ZUR FIT ANALYSE
+\begin{center}
+	\includegraphics{IMAGE/1ST}
+	\captionof{figure}{Dargestellt sind die relativen Häufigkeiten aufgetragen gegen die  durchgekommenen Photonen, bei einem Strahlteiler. Es wurden 500 Millionen Versuche durchgeführt.}
+\end{center}
+
+\subsubsection{Drei Strahlteiler}
+
+\begin{center}
+	\includegraphics{IMAGE/3ST}
+	\captionof{figure}{Dargestellt sind die relativen Häufigkeiten aufgetragen gegen die  durchgekommenen Photonen, bei drei Strahlteilern. Es wurden 500 Millionen Versuche durchgeführt.}
+\end{center}
+
+\subsubsection{Fünf Strahlteiler}
+
+\begin{center}
+	\includegraphics{IMAGE/5ST}
+	\captionof{figure}{Dargestellt sind die relativen Häufigkeiten aufgetragen gegen die  durchgekommenen Photonen, bei fünf Strahlteilern. Es wurden 500 Millionen Versuche durchgeführt.}
+\end{center}
+
+\subsection{Analyse}
+%%%FORMELN
+
+\begin{center}
+	\includegraphics{IMAGE/1ST-P50}
+	\captionof{figure}{Dargestellt sind die relativen Häufigkeiten aufgetragen gegen die  durchgekommenen Photonen, bei fünf Strahlteilern. Es wurden 500 Millionen Versuche durchgeführt.}
+\end{center}
+
+\begin{center}
+	\includegraphics{IMAGE/5ST-P75}
+	\captionof{figure}{Dargestellt sind die relativen Häufigkeiten aufgetragen gegen die  durchgekommenen Photonen, bei fünf Strahlteilern. Es wurden 500 Millionen Versuche durchgeführt.}
+\end{center}
+
+%%%BINOMIAL PERFEKT BLA BLA
+
+\subsection{Zusammenfassung}
+
+\clearpage
+\section{Anhang}
+\subsection{Code}
+\lstinputlisting{CONTENT/PhotonSim.java}
