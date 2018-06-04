@@ -1,2 +1,2 @@
 # Praktikums Seminar Dokument
-Von Finn F. und Domenik k.
+Von Finn F. und Domenik K.
