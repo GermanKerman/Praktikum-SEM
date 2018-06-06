@@ -50,10 +50,10 @@ Als vorletztes definieren wir noch unsere bereits verwendete Funktion Strahlente
 
 Normalverteilung($\sigma^2$:Varianz, $\mu$: Erwartungswert, x: Untersuchter Wert):\\
 \begin{equation*}
-	P(X= x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\qquad \mu = \sum_{i=1}^k x_i\cdot p_i, \qquad \sigma^2 = n\cdot p \cdot(1-p)
+	P(X= x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\qquad \mu = E(X) = n\cdot p, \qquad \sigma^2 = n\cdot p \cdot(1-p)
 \end{equation*}
 
-Poissonverteilung($\lambda$):\\
+Poissonverteilung($\lambda=E(X)$):\\
 \begin{equation*}
 	P(X=k)= \frac{\lambda^k}{k!}e^{-\lambda}
 \end{equation*}
@@ -65,14 +65,17 @@ Da im folgendem nicht gefittet wurde, muss der $r^2$-Wert manuel ausgerechnet we
 
 \begin{center}
 	\includegraphics{IMAGE/1ST-P50}
-	\captionof{figure}{Relative Häufigkeit aufgetragen auf durchgekommene Photonen, angenähert durch Poisson-, Binomial- und Normalverteilung Es wurde 1 Strahlteiler mit einer Durchlasswarscheinlichkeit von 50\% simuliert und 500 Millionen Versuche durchgeführt.\\ $r^2$: Poisson $\approx$ 0,79; Normal $\approx$ 0,998; Binom $\approx$ 1}
+	\captionof{figure}{Relative Häufigkeit aufgetragen auf durchgekommene Photonen, angenähert durch Poisson-, Binomial- und Normalverteilung Es wurde 1 Strahlteiler mit einer	Durchlasswarscheinlichkeit von 50\% simuliert und 500 Millionen Versuche durchgeführt.\\ $r^2$: Poisson $\approx$ 0,79; Normal $\approx$ 0,998; Binom $\approx$ 1\\
+	$n = 8,\quad p = 0.5,\quad \mu=\lambda=4,\quad \sigma^2= 2$ 	}
+
 \end{center}
 \clearpage
 In diesem Diagramm ist deutlich zu erkennen, dass unser Zufallsexperiment keiner Poissonverteilung folgt. Des Weiteren ist zu erkennen, dass eine Normalverteilung durchaus als gute Näherung betrachtet werden kann. Es ist aber auch sichtbar das bei diesen Versuchsparametern eine Binomialverteilung die höchste Übereinstimmung vorzuweisen hat. Dies legt die Vermutung nahe das unser Zufallsexperiment auch ein Bernoulli-Versuch ist.
 
 \begin{center}
 	\includegraphics{IMAGE/5ST-P75}
-	\captionof{figure}{Relative Häufigkeit aufgetragen auf durchgekommene Photonen, angenähert durch Poisson-, Binomial- und Normalverteilung Es wurden 5 Strahlteiler mit einer Durchlasswarscheinlichkeit von 75\% simuliert und 500 Millionen Versuche durchgeführt.\\ $r^2$: Poisson $\approx$ 0,8; Normal $\approx$ 0,98; Binom $\approx$ 1}
+	\captionof{figure}{Relative Häufigkeit aufgetragen auf durchgekommene Photonen, angenähert durch Poisson-, Binomial- und Normalverteilung Es wurden 5 Strahlteiler mit einer Durchlasswarscheinlichkeit von 75\% simuliert und 500 Millionen Versuche durchgeführt.\\ $r^2$: Poisson $\approx$ 0,8; Normal $\approx$ 0,98; Binom $\approx$ 1\\
+	$n = 8,\quad p = 0.75^5,\quad \mu=\lambda\approx1,89,\quad \sigma^2\approx1,45$ }
 \end{center}
 
 Es ist zu erkennen dass auch bei diesen Versuchsparametern dieselbe Beobachtung getätigt werden kann wie bei Diagramm 4, nämlich dass eine Binomialverteilung eines Bernoulli-Versuchs der Kettenlänge acht vorliegt.
@@ -97,15 +100,15 @@ Zusammenfassend lässt sich über dieses Experiment sagen, dass es in diesem Fal
 	\multicolumn{7}{|c|}{1 Strahlteiler} \\\hline
 	&\multicolumn{2}{|c|}{25\% Durchlass}&\multicolumn{2}{c|}{50\% Durchlass}&\multicolumn{2}{c|}{75\% Durchlass}\\\hline
 	\#DP & ABS & REL  & ABS & REL & ABS & REL \\\hline
-	0&50.060.590&0,10012118&1.952.901&0,003905802&7.793&1,5586e-05\\
-	1&133.481.859&0,266963718&15.621.636&0,031243272&183.433&0,000366866\\
-	2&155.705.375&0,31141075&54.684.469&0,109368938&1.922.575&0,00384515\\
-	3&103.843.189&0,207686378&109.374.310&0,21874862&11.533.646&0,023067292\\
-	4&43.260.603&0,086521206&136.733.468&0,273466936&43.254.905&0,08650981\\
-	5&11.535.075&0,02307015&109.362.826&0,218725652&103.817.466&0,207634932\\
-	6&1.922.542&0,003845084&54.692.025&0,10938405&155.734.561&0,311469122\\
-	7&183.095&0,00036619&15.626.048&0,031252096&133.482.836&0,266965672\\
-	8&7.672&1,5344e-05&1.952.317&0,003904634&50.062.785&0,10012557\\
+	0&	50.060.590&		0,10012118&	1.952.901&		0,003905802&	7.793&1,5586e-05\\
+	1&	133.481.859&	0,266963718&	15.621.636&		0,031243272&	183.433&0,000366866\\
+	2&	155.705.375&	0,31141075&	54.684.469&		0,109368938&	1.922.575&0,00384515\\
+	3&	103.843.189&	0,207686378&	109.374.310&	0,21874862&	11.533.646&0,023067292\\
+	4&	43.260.603&		0,086521206&	136.733.468&	0,273466936&	43.254.905&0,08650981\\
+	5&	11.535.075&		0,02307015&	109.362.826&	0,218725652&	103.817.466&0,207634932\\
+	6&	1.922.542&		0,003845084&	54.692.025&		0,10938405&	155.734.561&0,311469122\\
+	7&	183.095&		0,00036619&	15.626.048&		0,031252096&	133.482.836&0,266965672\\
+	8&	7.672&		1,5344e-05&		1.952.317&		0,003904634&	50.062.785&0,10012557\\
 	\hline
 \end{tabular}
 
